@@ -1,0 +1,19 @@
+version: 3
+
+tasks:
+  catalog:clean:
+    desc: Clean product catalog service build
+    cmd: ./gradlew catalog:clean
+    silent: true
+
+  catalog:run:
+    desc: Run product catalog service
+    cmd: ./gradlew catalog:bootRun
+    silent: true
+
+  catalog:test:
+    desc: Test product catalog service
+    cmds:
+      - task: catalog:clean
+      - ./gradlew catalog:test
+    silent: true
