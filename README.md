@@ -1,2 +1,2 @@
 # eshop
-Event driven microserviced-based c2c ecommerce platform
+Event driven microservice-based c2c ecommerce platform
