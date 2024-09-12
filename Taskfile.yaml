@@ -1,19 +1,26 @@
 version: 3
 
+includes:
+  catalog:
+    taskfile: ./catalog-service/Taskfile.yaml
+  gateway:
+    taskfile: ./api-gateway/Taskfile.yaml
+
 tasks:
-  catalog:clean:
-    desc: Clean product catalog service build
-    cmd: ./gradlew catalog:clean
+  clean:
+    desc: Clean all projects
+    cmd: ./gradlew clean --parallel
+    silent: true
+  run:
+    desc: Run all projects
+    cmd: ./gradlew bootRun --parallel
+    silent: true
+  test:
+    desc: Test all projects
+    cmd: ./gradlew test --parallel
     silent: true
 
-  catalog:run:
-    desc: Run product catalog service
-    cmd: ./gradlew catalog:bootRun
-    silent: true
-
-  catalog:test:
-    desc: Test product catalog service
-    cmds:
-      - task: catalog:clean
-      - ./gradlew catalog:test
+  gradle:stop:
+    desc: Stop all gradle daemons
+    cmd: ./gradlew --stop
     silent: true

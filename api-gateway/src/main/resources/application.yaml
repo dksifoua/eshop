@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  devtools:
+    livereload:
+      port: 35730
+
+  cloud:
+    gateway:
+      routes:
+        - id: catalog-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/v1/catalog/**
+logging:
+  level:
+    root: info
+    org.springframework.cloud.gateway: trace
+    org.springframework.web: debug
+    org.springframework.web.reactive: debug

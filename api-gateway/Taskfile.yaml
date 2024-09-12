@@ -1,0 +1,19 @@
+version: 3
+
+tasks:
+  clean:
+    desc: Clean api gateway build
+    cmd: ./gradlew :api-gateway:clean
+    silent: true
+
+  run:
+    desc: Run api gateway
+    cmd: ./gradlew :api-gateway:bootRun
+    silent: true
+
+  test:
+    desc: Test api gateway
+    cmds:
+      - task: clean
+      - ./gradlew :api-gateway:test
+    silent: true
