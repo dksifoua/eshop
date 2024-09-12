@@ -1,4 +1,4 @@
-name: catalog-service
+name: api-gateway
 
 on:
   push:
@@ -27,5 +27,5 @@ jobs:
         with:
           version: 3.x
           repo-token: ${{ secrets.GH_TOKEN }}
-      - name: Test product catalog service
-        run: task catalog:test
+      - name: Test api gateway
+        run: task gateway:test

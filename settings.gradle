@@ -1,3 +1,4 @@
 rootProject.name = 'eshop'
 
+include('api-gateway')
 include('catalog-service')
