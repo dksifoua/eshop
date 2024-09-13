@@ -1,4 +1,4 @@
-name: eureka
+name: eureka-server
 
 on:
   push:
