@@ -1,6 +1,11 @@
 app:
   base-path: /api/v1/catalog
 
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+
 server:
   port: 8081
 

@@ -3,6 +3,8 @@ version: 3
 includes:
   catalog:
     taskfile: ./catalog-service/Taskfile.yaml
+  eureka:
+    taskfile: ./eureka-server/Taskfile.yaml
   gateway:
     taskfile: ./api-gateway/Taskfile.yaml
 
@@ -17,7 +19,9 @@ tasks:
     silent: true
   test:
     desc: Test all projects
-    cmd: ./gradlew test --parallel
+    cmds:
+      - task: clean
+      - ./gradlew test --parallel
     silent: true
 
   gradle:stop:
