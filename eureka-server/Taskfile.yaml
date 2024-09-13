@@ -1,0 +1,19 @@
+version: 3
+
+tasks:
+  clean:
+    desc: Clean eureka server build
+    cmd: ./gradlew :eureka-server:clean
+    silent: true
+
+  run:
+    desc: Run netflix eureka server
+    cmd: ./gradlew :eureka-server:bootRun
+    silent: true
+
+  test:
+    desc: Test netflix eureka server
+    cmds:
+      - task: clean
+      - ./gradlew :eureka-server:test
+    silent: true

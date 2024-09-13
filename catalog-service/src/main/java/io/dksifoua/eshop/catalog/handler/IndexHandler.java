@@ -8,6 +8,7 @@ import reactor.core.publisher.Mono;
 public class IndexHandler {
 
     public Mono<ServerResponse> index() {
-        return ServerResponse.ok().body(Mono.just("Welcome to eshop product category service!"), String.class);
+        String responseData = "Welcome to eshop product category service!";
+        return ServerResponse.ok().body(Mono.just(responseData), String.class);
     }
 }
