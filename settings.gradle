@@ -2,4 +2,5 @@ rootProject.name = 'eshop'
 
 include('api-gateway')
 include('catalog-service')
+include('config-server')
 include('eureka-server')
