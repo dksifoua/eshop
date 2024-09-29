@@ -1,0 +1,25 @@
+app:
+  base-path: /api/v1/catalog
+
+eureka:
+  client:
+    enabled: false
+    register-with-eureka: false
+    fetch-registry: false
+
+server:
+  port: 8081
+
+spring:
+  application:
+    name: catalog-service
+  
+  devtools:
+    livereload:
+      port: 35729
+
+logging:
+  level:
+    root: info
+    org.springframework.web: debug
+    org.springframework.web.reactive: debug
