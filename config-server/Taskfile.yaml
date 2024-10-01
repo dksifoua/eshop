@@ -1,0 +1,19 @@
+version: 3
+
+tasks:
+  clean:
+    desc: Clean config server build
+    cmd: ./gradlew :config-server:clean
+    silent: true
+
+  run:
+    desc: Run config server
+    cmd: ./gradlew :config-server:bootRun
+    silent: true
+
+  test:
+    desc: Test config server
+    cmds:
+      - task: clean
+      - ./gradlew :config-server:test
+    silent: true

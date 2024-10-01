@@ -3,6 +3,8 @@ version: 3
 includes:
   catalog:
     taskfile: ./catalog-service/Taskfile.yaml
+  config:
+    taskfile: ./config-server/Taskfile.yaml
   eureka:
     taskfile: ./eureka-server/Taskfile.yaml
   gateway:
